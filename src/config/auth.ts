@@ -1,5 +1,7 @@
 const is_production_env = process.env.NODE_ENV === 'production';
-require('dotenv').config({ path: is_production_env ? '.env' : '.env.test' });
+
+import dotenv from 'dotenv';
+dotenv.config({ path: is_production_env ? '.env' : '.env.test' });
 
 export const auth_config = {
   jwt: {
