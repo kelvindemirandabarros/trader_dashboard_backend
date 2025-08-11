@@ -2,10 +2,10 @@ import { Request, Response, Router } from 'express';
 import { z as zod } from 'zod';
 
 // Models:
-import { EventModel } from '../../models/event.model';
+import { EventModel } from '../../models/event.model.js';
 
 // Utils:
-import { io } from '../../utils/websocket';
+import { io } from '../../utils/websocket.js';
 
 const event_schema = zod.object({
   userId: zod.string(),

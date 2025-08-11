@@ -3,13 +3,13 @@ import { compare } from 'bcryptjs';
 import { z as zod } from 'zod';
 
 // Models:
-import { UserModel } from '../../models/user.model';
+import { UserModel } from '../../models/user.model.js';
 
 // Utils:
-import { generate_access_token } from '../../services/generate_token';
+import { generate_access_token } from '../../services/generate_token.js';
 
 // Consts:
-import { error_messages } from '../../errors/Messages';
+import { error_messages } from '../../errors/Messages.js';
 
 async function session_create(request: Request, response: Response) {
   const session_schema = zod.object({

@@ -1,9 +1,9 @@
 import { Router } from 'express';
 
 // Rotas:
-import { event_create_route } from '../controllers/event/create';
-import { events_get_route } from '../controllers/event/get';
-import { event_summary_get_route } from '../controllers/event/summary/get';
+import { event_create_route } from '../controllers/event/create.js';
+import { events_get_route } from '../controllers/event/get.js';
+import { event_summary_get_route } from '../controllers/event/summary/get.js';
 
 const event_router = Router();
 

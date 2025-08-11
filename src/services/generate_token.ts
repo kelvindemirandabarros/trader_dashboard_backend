@@ -1,9 +1,9 @@
 import jwt, { SignOptions } from 'jsonwebtoken';
 
 // Consts:
-import { auth_config } from '../config/auth';
+import { auth_config } from '../config/auth.js';
 
-import type { Token } from '../../types/Session';
+import type { Token } from '../../types/Session.js';
 
 interface GenerateAccessTokenInterface {
   user_id: string;

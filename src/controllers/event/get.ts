@@ -1,8 +1,10 @@
 import { Request, Response, Router } from 'express';
 
 // Models:
-import { EventModel } from '../../models/event.model';
-import { auth_middleware } from '../../middlewares/auth.middleware';
+import { EventModel } from '../../models/event.model.js';
+
+// Middlewares:
+import { auth_middleware } from '../../middlewares/auth.middleware.js';
 
 const events_get_route = Router();
 
