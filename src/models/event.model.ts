@@ -8,13 +8,18 @@ export interface Event {
   metadata?: Record<string, unknown>;
 }
 
-const event_schema = new Schema<Event & Document>({
-  userId: { type: String, required: true },
-  type: { type: String, required: true },
-  value: { type: Number, required: true },
-  timestamp: { type: Date, default: Date.now },
-  metadata: { type: Object }
-});
+const event_schema = new Schema<Event & Document>(
+  {
+    userId: { type: String, required: true },
+    type: { type: String, required: true },
+    value: { type: Number, required: true },
+    timestamp: { type: Date, default: Date.now },
+    metadata: { type: Object }
+  },
+  {
+    timestamps: true
+  }
+);
 
 export const EventModel = mongoose.model<Event & Document>(
   'Event',
