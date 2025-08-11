@@ -9,9 +9,9 @@
   "scripts": {
     "dev": "tsx ./src/server.ts",
     "build": "tsc",
-    "build:clean": "rm -rf ./dist/*",
-    "start": "node ./dist/server.js",
-    "seed": "ts-node scripts/seed.ts"
+    "build:clean": "rm -rf dist/* && npm run build",
+    "start": "node dist/server.js",
+    "seed": "tsx scripts/seed.ts"
   },
   "dependencies": {
     "axios": "^1.11.0",
