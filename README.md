@@ -4,7 +4,7 @@ Backend REST em Node.js + TypeScript para um dashboard de monitoramento de trade
 Recebe eventos via webhook, persiste em MongoDB, agrega dados, emite atualizações por WebSocket (Socket.IO) e gera insights via OpenAI.
 
 Hospedado na plataforma Render.
-Para ligar o servidor, acessando [AQUI](https://trader-dashboard-backend.onrender.com/) e aguarde até, no máximo, 1 minuto para que a plataforma inicie tudo.
+Para ligar o servidor, acesse [AQUI](https://trader-dashboard-backend.onrender.com/) e aguarde até, no máximo, 1 minuto para que a plataforma inicie tudo.
 
 O repositório do frontend está [AQUI](https://github.com/kelvindemirandabarros/trader_dashboard_frontend).
 
