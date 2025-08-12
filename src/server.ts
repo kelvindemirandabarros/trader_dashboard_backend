@@ -7,6 +7,7 @@ import http from 'http';
 import { connect_db } from './config/db.js';
 
 // Routes:
+import { home_route } from './routes/home.routes.js';
 import { event_router } from './routes/event.routes.js';
 import { session_router } from './routes/session.routes.js';
 
@@ -22,6 +23,7 @@ init_websocket(server);
 app.use(cors());
 app.use(express.json());
 
+app.use(home_route);
 app.use('/api', event_router);
 app.use(session_router);
 
