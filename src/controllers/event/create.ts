@@ -18,7 +18,7 @@ const event_schema = zod.object({
 const event_create_route = Router();
 
 event_create_route.post(
-  '/webhook/event',
+  '/api/webhook/event',
 
   // MIDDLEWARE PARA CHEGAR ORIGEM DA REQUISIÇÃO AO WEBHOOK...
 

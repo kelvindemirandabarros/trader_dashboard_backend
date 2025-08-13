@@ -9,7 +9,7 @@ import { auth_middleware } from '../../middlewares/auth.middleware.js';
 const events_get_route = Router();
 
 events_get_route.get(
-  '/events',
+  '/api/events',
 
   auth_middleware,
 
