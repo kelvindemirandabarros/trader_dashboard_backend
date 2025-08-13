@@ -1,13 +1,13 @@
 import { Router, Request, Response } from 'express';
 
-const home_route = Router();
+const home_router = Router();
 
 // Define a página principal:
-home_route.get('/', (request: Request, response: Response) => {
+home_router.get('/', (request: Request, response: Response) => {
   // const api_doc_url =
   //   (process.env.APP_BACKEND_URL
   //     ? process.env.APP_BACKEND_URL
-  //     : 'https://busca-tudo-backend.onrender.com') + '/api_docs';
+  //     : 'https://trader-dashboard-backend.onrender.com') + '/api_docs';
 
   // const api_doc_paragraph = `
   //     <p style="margin: 10px; text-align: center; font-size: 24px">
@@ -32,4 +32,4 @@ home_route.get('/', (request: Request, response: Response) => {
   return response.send(html);
 });
 
-export { home_route };
+export { home_router };
