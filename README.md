@@ -8,6 +8,11 @@ Para ligar o servidor, acesse [AQUI](https://trader-dashboard-backend.onrender.c
 
 O repositório do frontend está [AQUI](https://github.com/kelvindemirandabarros/trader_dashboard_frontend).
 
+## Login no frontend
+
+email => teste@email.com
+senha => teste321
+
 ---
 
 ## Tecnologias
@@ -52,8 +57,8 @@ Crie `.env` a partir de `.env.example`:
 
 ```
 PORT=3000
-# MONGO_URI=mongodb://mongo:27017/trader_dashboard # Para Docker.
-MONGO_URI=mongodb://127.0.0.1:27017/trader_dashboard # Para MongoDB instalado na máquina.
+# MONGO_URI=mongodb://mongo:27017/trader_dashboard_dev # Para Docker.
+MONGO_URI=mongodb://127.0.0.1:27017/trader_dashboard_dev # Para MongoDB instalado na máquina.
 JWT_SECRET=supersecret
 OPENAI_API_KEY=openai_api_key
 ```
