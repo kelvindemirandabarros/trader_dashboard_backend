@@ -7,14 +7,15 @@
     {
       "name": "Trader Dashboard - Backend (Debug)",
       "type": "node",
-      "request": "launch",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["tsx", "--inspect-brk", "src/server.ts"],
+      "request": "attach",
       "cwd": "${workspaceFolder}",
       "env": { "NODE_ENV": "development" },
-      "restart": true,
+      "restart": false,
       "skipFiles": ["<node_internals>/**"],
-      "outFiles": ["${workspaceFolder}/**/*.js"]
+      "outFiles": ["${workspaceFolder}/**/*.js"],
+      "port": 9229,
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": null
     }
   ]
 }
