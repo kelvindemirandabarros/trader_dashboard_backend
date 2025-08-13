@@ -1,4 +1,6 @@
-# Trader Monitor Backend
+# Trader Dashboard - Backend
+
+Backend para o projeto de Dashboard para Trader. Mais detalhes em [`docs/PROJETO.md`](https://github.com/kelvindemirandabarros/trader_dashboard_backend/tree/master/docs/PROJETO.md).
 
 Backend REST em Node.js + TypeScript para um dashboard de monitoramento de traders em tempo real.  
 Recebe eventos via webhook, persiste em MongoDB, agrega dados, emite atualizações por WebSocket (Socket.IO) e gera insights via OpenAI.
