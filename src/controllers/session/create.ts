@@ -34,7 +34,9 @@ async function session_create(request: Request, response: Response) {
   try {
     const email_lowercase = email.toLowerCase();
 
-    const user = await UserModel.findOne({ email: email_lowercase }).exec();
+    const user = await UserModel.findOne({ email: email_lowercase })
+      .select('+password')
+      .lean();
 
     if (!user) {
       return response.status(400).json({
@@ -78,7 +80,7 @@ async function session_create(request: Request, response: Response) {
 const session_create_route = Router();
 
 session_create_route.post(
-  '/api/session',
+  '/api/login',
 
   session_create
 );
