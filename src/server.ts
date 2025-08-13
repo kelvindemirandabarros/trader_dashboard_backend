@@ -1,34 +1,37 @@
-import express from 'express';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import http from 'http';
+import { server } from './app.js';
+
+// // Database:
+// import { connect_db } from './config/db.js';
+
+// connect_db().then(() => {
+//   server.listen(process.env.PORT || 3000, () => {
+//     console.log(`[Server] Rodando na porta ${process.env.PORT || 3000}`);
+//   });
+// });
 
 // Database:
-import { connect_db } from './config/db.js';
+import { Database } from './database/database.js';
 
-// Routes:
-import { home_route } from './routes/home.routes.js';
-import { event_router } from './routes/event.routes.js';
-import { session_router } from './routes/session.routes.js';
+// Consts:
+import { application_port } from './consts/App.js';
 
-// Websocket:
-import { init_websocket } from './utils/websocket.js';
+async function start_server() {
+  try {
+    const mongodb_uri = Database.get_mongodb_uri();
 
-dotenv.config();
+    console.log('mongodb_uri:', mongodb_uri);
 
-const app = express();
-const server = http.createServer(app);
-init_websocket(server);
+    const database_connection = await Database.connect(mongodb_uri);
 
-app.use(cors());
-app.use(express.json());
+    await Database.create_user_test(database_connection);
 
-app.use(home_route);
-app.use('/api', event_router);
-app.use(session_router);
+    server.listen(application_port);
 
-connect_db().then(() => {
-  server.listen(process.env.PORT || 3000, () => {
-    console.log(`[Server] Rodando na porta ${process.env.PORT || 3000}`);
-  });
-});
+    console.log(`Backend ativado na porta ${application_port}.`);
+  } catch (error) {
+    console.log('Não foi possível inicializar o servidor. Erro:');
+    console.error(error);
+  }
+}
+
+start_server();
