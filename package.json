@@ -7,8 +7,8 @@
   "type": "module",
   "main": "dist/server.js",
   "scripts": {
-    "dev": "tsx ./src/server.ts",
-    "dev:debug": "tsx watch --inspect-brk ./src/server.ts",
+    "dev": "tsx watch ./src/server.ts",
+    "dev:debug": "tsx watch --inspect ./src/server.ts",
     "build": "tsc",
     "build:clean": "rm -rf dist/* && npm run build",
     "start": "node ./dist/server.js",
